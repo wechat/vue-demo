@@ -5,10 +5,10 @@
   </div>
 </template>
 
-<script setup>
-import { ref } from "vue";
+<script setup lang="ts">
+import { ref } from 'vue';
 
-const inputValue = ref("");
+const inputValue = ref('');
 const prop = defineProps({
   defaultValue: {
     type: String,
@@ -33,7 +33,7 @@ const prop = defineProps({
 });
 
 if (prop.defaultValue) {
-  inputValue.value = prop.defaultValue
+  inputValue.value = prop.defaultValue;
 }
 
 const handleChange = () => {
@@ -41,7 +41,7 @@ const handleChange = () => {
 };
 
 const handleclear = () => {
-  inputValue.value = "";
+  inputValue.value = '';
   prop.onClear();
 };
 </script>

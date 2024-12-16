@@ -4,6 +4,10 @@
   </div>
 </template>
 
+<script setup lang="ts">
+console.log('about');
+</script>
+
 <style scoped>
 .content {
   display: flex;

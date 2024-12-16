@@ -10,15 +10,15 @@
     />
   </div>
 </template>
-<script setup>
-import Input from "../components/Input.vue";
+<script setup lang="ts">
+import Input from '../components/Input.vue';
 
-function onChange(value) {
+function onChange(value: string) {
   console.log(value);
 }
 
 function onClear() {
-  console.log("clear");
+  console.log('clear');
 }
 </script>
 <style scoped></style>

@@ -7,19 +7,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import type { RouteLocationNormalized, NavigationGuardNext } from "vue-router";
-import router from "./router";
+import { ref } from 'vue';
+import type { RouteLocationNormalized, NavigationGuardNext } from 'vue-router';
+import router from './router';
 
 const includeList = ref<string[]>([]);
 
 router.beforeEach(
   (
     to: RouteLocationNormalized,
-    from: RouteLocationNormalized,
-    next: NavigationGuardNext
+    _from: RouteLocationNormalized,
+    next: NavigationGuardNext,
   ) => {
-    const { name, meta, query } = to;
+    const { name, meta } = to;
     if (meta?.keepAlive) {
       includeList.value.push(name as string);
     }
@@ -27,6 +27,6 @@ router.beforeEach(
       document.title = meta.title as string;
     }
     next();
-  }
+  },
 );
 </script>
